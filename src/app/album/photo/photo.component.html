@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <button class="btn btn-primary m-1" (click)="onBack()">Back</button>
+            <button class="btn btn-warning m-1" (click)="onNew()">New</button>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-md-4" *ngFor="let photo of photos; let i = index">
+            <app-single-photo (photoDeleted)="onDelete($event)" [photo]="photo" [index]="i"></app-single-photo>
+        </div>
+    </div>
+</div>

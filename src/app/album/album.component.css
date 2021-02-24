@@ -1,0 +1,32 @@
+.clipped-border {
+  -webkit-clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  padding: 50px;
+  background: linear-gradient(grey, lightgrey);
+  height: 250px;
+  width: 250px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+#clipped {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.clipped-border:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+  z-index: 10;
+}
+a {
+  text-decoration: none;
+}

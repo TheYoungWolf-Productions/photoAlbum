@@ -1,0 +1,8 @@
+<div class="card" style="margin-bottom: 25px">
+    <img class="card-img-top" [src]="photo.thumbnailUrl" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ photo.title | slice:0:25 }}</h5>
+        <a (click)="onEdit(photo)" class="btn btn-primary m-1">Edit</a>
+        <a (click)="onDelete(photo)" class="btn btn-danger m-1">Delete</a>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <button class="btn btn-primary m-1" (click)="onBack()">Back</button>
+    <h1>Edit a photo of the album: </h1>
+    <form [formGroup]="myForm" ngSubmit="onAddPhoto()">
+        <div class="row">
+            <div class="col-12 form-group">
+                <label for="title">Title </label>
+                <input class="form-control" type="text" id="title" formControlName="title">
+                <div *ngIf="!myForm.get('title').valid && (myForm.get('title').touched || myForm.get('url').dirty)"
+                    class="alert alert-danger">
+                    Mandatory field
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 form-group">
+                <label for="title">Url</label>
+                <input class="form-control" type="text" id="url" formControlName="url">
+                <div *ngIf="!myForm.get('url').valid && (myForm.get('url').touched || myForm.get('url').dirty)"
+                    class="alert alert-danger">
+                    Wrong format
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-end">
+            <div class="col-2">
+                <button class="btn btn-success" [disabled]="!myForm.valid" (click)="onEditPhoto()">Edit Photo</button>
+            </div>
+        </div>
+    </form>
+    <div class="alert alert-success m-3" *ngIf="success">Photo has been edited, returning to photos!</div>
+</div>

@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-3" *ngFor="let album of albums;">
+            <div class="clipped-border" (click)="onClick(album)">
+                <div id="clipped">{{ album.id }} <br> {{ album.title }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
